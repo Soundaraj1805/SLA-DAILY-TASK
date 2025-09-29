@@ -1,0 +1,26 @@
+package PACK;
+
+public class emp_const {
+  
+	String name;
+	int age;
+	String gender;
+	
+	public emp_const(String a,int b,String c)
+	{
+		this.name=a;
+		this.age=b;
+		this.gender=c;
+		
+		
+		System.out.println("EMPLOYEE_NAME :"+a+"\n"+"EMPLOYEE_AGE :"+b+"\n"+"EMPLOYEE :"+c);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		emp_const ec=new emp_const("jack",21,"male");
+		System.out.println();
+		emp_const ec1=new emp_const("rose",20,"female");
+	
+	}
+
+}

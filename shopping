@@ -1,0 +1,46 @@
+package PACK;
+
+public class shopping {
+	private String product_name;
+	private int price;
+	private int available;
+	
+	public void set(String product_name) {
+		this.product_name= product_name;
+	}
+	public String getname()
+	{
+		return this.product_name;
+	}
+	public void setprice(int price) {
+		this.price= price;
+		
+	}
+	public int getprice()
+	{
+		
+		return this.price;
+	}
+	public void setavailable(int available) {
+		this.available= available;
+	}
+	public int getavailabale()
+	{
+		return this.available;
+	}
+	
+	public static void main(String[] args) {
+	   shopping sh=new shopping();
+	   sh.set("Bags");
+	   String name=sh.getname();
+	   sh.setprice(2500);
+	   int price=sh.getprice();
+	   sh.setavailable(2);
+	   int available=sh.getavailabale();
+	   System.out.println("PRODUCT_NAME :"+name);
+	   System.out.println("PRODUCT_PRICE :"+price);
+	   System.out.println("PRODUCT_QUALITY :"+available);
+
+	}
+
+}

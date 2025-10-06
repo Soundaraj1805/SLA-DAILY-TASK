@@ -1,0 +1,37 @@
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class set {
+    public static void main(String[] args) {
+        // First set of items
+        Set<String> set1 = new LinkedHashSet<>();
+        set1.add("testing");
+        set1.add("manual testing");
+        set1.add("automated testing");
+
+        // Second set of items
+        Set<String> set2 = new LinkedHashSet<>();
+        set2.add("developer");
+        set2.add("front-end");
+        set2.add("back-end");
+
+        set1.addAll(set2);
+
+        System.out.println("Merged Set: " +set1);
+
+    
+        String searchItem = "sql";
+
+        
+        if (set1.contains(searchItem)) {
+            System.out.println("Item found: " + searchItem);
+        } else {
+            System.out.println("Item not found. Adding: " + searchItem);
+            set1.add(searchItem);
+        }
+
+       
+        System.out.println("Final Set: " + set1);
+    }
+}

@@ -1,0 +1,36 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class taskselenium {
+
+	public static void main(String[] args) throws InterruptedException {
+	WebDriverManager.chromedriver().setup();
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://webdriveruniversity.com/Contact-Us/contactus.html");
+	WebElement fname=driver.findElement(By.name("first_name"));
+	fname.sendKeys("soundaraj");
+	WebElement lname=driver.findElement(By.name("last_name"));
+	lname.sendKeys("v");
+	WebElement ename=driver.findElement(By.name("email"));
+	ename.sendKeys("soundar@632gmail.com");
+	WebElement mname=driver.findElement(By.name("message"));
+	mname.sendKeys("vaazhthukal vaazhthukal");
+	WebElement submit=driver.findElement(By.xpath("(//input[@type='submit'])"));
+	submit.click();
+	//WebElement reset=driver.findElement(By.xpath("(//input[@type='reset'])"));
+	//reset.click();
+	
+	
+	Thread.sleep(300000);
+	driver.close();
+	
+	
+	}
+
+}

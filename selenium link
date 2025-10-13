@@ -1,0 +1,39 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class task3 {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		// TODO Auto-generated method stub
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get(("https://academybugs.com/contact-us-form/"));
+		String L1=driver.findElement(By.xpath("//a[text()='AcademyBugs.com']")).getText();
+		String L2=driver.findElement(By.xpath("//a[text()='Examples of Bugs']")).getText();
+		String L3=driver.findElement(By.xpath("//a[text()='Types of Bugs']")).getText();
+		String L4=driver.findElement(By.xpath("//a[text()='Find Bugs']")).getText();
+		String L5=driver.findElement(By.xpath("//a[text()='Report Bugs']")).getText();
+		String L6=driver.findElement(By.xpath("//a[text()='Send']")).getText();
+		String L7=driver.findElement(By.xpath("//a[text()='Terms & Conditions']")).getText();
+		String L8=driver.findElement(By.xpath("//a[text()='Privacy Policy ']")).getText();
+
+		System.out.println(L1);
+		System.out.println(L2);
+		System.out.println(L3);
+		System.out.println(L4);
+		System.out.println(L5);
+		System.out.println(L6);
+		System.out.println(L7);
+		System.out.println(L8);
+		
+		Thread.sleep(1000);
+		driver.close();
+	}
+
+}

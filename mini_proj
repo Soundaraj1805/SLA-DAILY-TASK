@@ -1,0 +1,44 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class mini_project {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://practicetestautomation.com/practice-test-login/");
+		WebElement name=driver.findElement(By.name("username"));
+		name.sendKeys("student");
+		WebElement pass=driver.findElement(By.name("password"));
+		pass.sendKeys("Password123");
+		WebElement bt=driver.findElement(By.id("submit"));	
+		bt.click();
+		
+		String old_url = driver.getCurrentUrl();
+		if(old_url.equals("https://practicetestautomation.com/logged-in-successfully/")) {
+			
+			String txt=driver.findElement(By.cssSelector(".post-title")).getText();
+			  System.out.println(txt);
+		}
+		else {
+			System.out.println("mismatch the username and password");
+		}
+		 Thread.sleep(7000);
+		driver.findElement(By.xpath("//a[text()='Log out']")).click();
+		String new_url=driver.getCurrentUrl();
+		if(new_url.equals("https://practicetestautomation.com/practice-test-login/"))
+		{
+			String Text=driver.findElement(By.cssSelector("//h2[text()='Test login']")).getText();
+			System.out.println(Text);
+		}
+		driver.close();
+	}
+
+}
